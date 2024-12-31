@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from langchain.agents import AgentType
 from langchain_groq import ChatGroq
-from langchain.agents import create_sql_agent
+from langchain_community.agent_toolkits.sql.base import create_sql_agent
 from langchain_community.utilities import SQLDatabase
 from sqlalchemy import create_engine
 import json
@@ -25,7 +25,6 @@ import time
 from tenacity import retry, stop_after_attempt, wait_exponential
 import logging
 from langchain.chains import LLMChain
-
 # Add after imports, before page configuration
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
